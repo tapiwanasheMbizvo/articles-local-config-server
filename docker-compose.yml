@@ -1,0 +1,17 @@
+services:
+  springboot-app:
+    build: .
+    container_name: config-server
+    env_file:
+      - /home/developer/dev/env/github.env
+    ports:
+      - "5671:5671"
+    networks:
+      - articles-all-local-services_home_net
+
+
+networks:
+  articles-all-local-services_home_net:
+    external: true
+
+

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config.server
+  cloud:
+    config:
+      server:
+        git:
+          repos:
+            local:
+              pattern: local*
+              uri: ${GITHUB_ROOT_URL}/articles-local-config.git
+              default-label: main
+              username: ${GITHUB_USER}
+              password: ${GITHUB_PAT:}
+          uri: ${GITHUB_ROOT_URL}/articles-local-config.git
+          username: ${GITHUB_USER}
+          password: ${GITHUB_PAT}
+
+server:
+  port: 5671
